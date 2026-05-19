@@ -6,7 +6,7 @@
   <title>(사)울산YWCA 돌봄과살림 서비스 신청</title>
   <meta name="robots" content="noindex" />
 
-  <!-- 카카오톡/링크 공유 미리보기 설정: 실제 GitHub Pages 주소로 바꿔주세요. -->
+  <!-- 카카오톡/링크 공유 미리보기 설정 -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="(사)울산YWCA 돌봄과살림 서비스 신청">
   <meta property="og:description" content="간병·가사 서비스가 필요할 때, 돌봄과살림으로 간편하게 신청하세요.">
@@ -20,8 +20,6 @@
       --green: #0f8a55;
       --green-dark: #087141;
       --green-soft: #eaf7f1;
-      --blue: #1268b3;
-      --orange: #f08a24;
       --bg: #f7fbf9;
       --text: #20242a;
       --muted: #6b7280;
@@ -47,7 +45,7 @@
     }
 
     .top-bar {
-      min-height: 78px;
+      min-height: 72px;
       display: flex;
       align-items: center;
       gap: 14px;
@@ -80,36 +78,55 @@
     section.active { display: block; animation: fade 0.25s ease; }
 
     .page {
-      width: min(100%, 960px);
+      width: min(100%, 1080px);
       margin: 0 auto;
-      padding: 40px 22px 48px;
+      padding: 36px 22px 42px;
     }
 
-    .hero {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      align-items: center;
-      gap: 32px;
-      margin-bottom: 22px;
+    .hero-wrap {
+      position: relative;
+      min-height: 390px;
+      border-radius: 0;
+      overflow: visible;
+      margin-bottom: -42px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0 0 auto auto;
+      width: min(72%, 760px);
+      height: 380px;
+      background-image: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.56) 34%, rgba(255,255,255,0.04) 76%), url('hero-care.png');
+      background-size: cover;
+      background-position: center right;
+      border-bottom-left-radius: 120px;
+      opacity: 0.98;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      width: min(100%, 440px);
+      padding: 34px 0 95px;
     }
 
     .pill {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 18px;
+      padding: 9px 18px;
       border-radius: 999px;
       background: #e9f7f0;
       border: 1px solid #bfe5d1;
       color: var(--green-dark);
       font-weight: 850;
-      font-size: 15px;
+      font-size: 14px;
       margin-bottom: 20px;
     }
 
     .hero-title {
       margin: 0;
-      font-size: clamp(38px, 6vw, 60px);
+      font-size: clamp(38px, 6vw, 58px);
       line-height: 1.15;
       letter-spacing: -2px;
       font-weight: 950;
@@ -121,35 +138,20 @@
     .hero-desc {
       margin: 20px 0 0;
       color: #374151;
-      font-size: clamp(17px, 2.4vw, 21px);
+      font-size: clamp(16px, 2.2vw, 20px);
       word-break: keep-all;
     }
 
-    .hero-visual {
-      min-height: 320px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .hero-image {
-      width: 100%;
-      max-width: 640px;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      border-radius: 42px;
-      box-shadow: 0 20px 50px rgba(15, 80, 48, 0.12);
-      border: 1px solid #e0ece6;
-    }
-
     .service-panel {
+      position: relative;
+      z-index: 4;
       background: rgba(255,255,255,0.96);
       border: 1px solid var(--line);
       border-radius: 26px;
       box-shadow: var(--shadow);
       padding: 24px;
-      margin-bottom: 28px;
+      margin: 0 auto 28px;
+      max-width: 890px;
     }
 
     .service-panel h2 {
@@ -166,7 +168,7 @@
     }
 
     .service-card {
-      min-height: 170px;
+      min-height: 150px;
       border: 2px solid #e5e7eb;
       background: #ffffff;
       border-radius: 22px;
@@ -185,25 +187,25 @@
     }
 
     .service-card .icon {
-      width: 72px;
-      height: 72px;
-      margin: 0 auto 12px;
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 10px;
       border-radius: 50%;
       background: #eaf7f1;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 38px;
+      font-size: 34px;
     }
 
     .service-card b {
       display: block;
       font-size: 21px;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
 
     .service-card span {
-      font-size: 14px;
+      font-size: 13.5px;
       color: var(--muted);
       word-break: keep-all;
     }
@@ -216,20 +218,21 @@
       background: #cfe8c5;
       color: var(--green-dark);
       font-weight: 900;
-      font-size: 15px;
+      font-size: 14px;
     }
 
     .org-card {
-      margin-top: 28px;
-      padding: 26px 28px;
+      margin: 28px auto 0;
+      padding: 24px 28px;
       background: #f5faf6;
-      border-radius: 28px;
+      border-radius: 24px;
       border: 1px solid #dfe9e4;
       display: grid;
       grid-template-columns: 1.25fr 1fr;
       gap: 24px;
-      box-shadow: 0 16px 40px rgba(0,0,0,.05);
+      box-shadow: 0 14px 32px rgba(0,0,0,.045);
       align-items: center;
+      max-width: 890px;
     }
 
     .org-left {
@@ -260,7 +263,7 @@
     .org-left p {
       margin: 6px 0;
       color: #263238;
-      font-size: 16px;
+      font-size: 15.5px;
     }
 
     .org-right {
@@ -278,7 +281,7 @@
     .org-right p {
       margin: 0;
       color: #263238;
-      font-size: 16px;
+      font-size: 15.5px;
       word-break: keep-all;
     }
 
@@ -486,10 +489,11 @@
       .top-bar { padding: 13px 16px; }
       .logo { width: 36px; }
       .brand-title { font-size: 18px; gap: 6px; }
-      .page { padding: 28px 16px 38px; }
-      .hero { grid-template-columns: 1fr; gap: 18px; }
-      .hero-visual { min-height: auto; }
-      .hero-image { max-width: 100%; border-radius: 28px; }
+      .page { padding: 24px 16px 38px; }
+      .hero-wrap { min-height: auto; margin-bottom: 0; padding-top: 210px; }
+      .hero-bg { width: 100%; height: 230px; border-bottom-left-radius: 50px; }
+      .hero-copy { padding: 0 0 20px; width: 100%; }
+      .hero-title { font-size: 42px; }
       .service-grid, .two-grid, .btn-row { grid-template-columns: 1fr; }
       .day-grid { grid-template-columns: repeat(4, 1fr); }
       .form-card { padding: 22px 18px; }
@@ -510,14 +514,12 @@
 
     <section id="intro" class="active">
       <div class="page">
-        <div class="hero">
-          <div>
+        <div class="hero-wrap">
+          <div class="hero-bg" aria-hidden="true"></div>
+          <div class="hero-copy">
             <div class="pill">🌿 간병 · 가사 서비스 신청</div>
             <h1 class="hero-title">필요한 돌봄을<br><span class="green">빠르게</span><br>신청하세요</h1>
             <p class="hero-desc">간병서비스와 가사서비스 신청 정보를 남겨주시면 담당자가 확인 후 연락드립니다.</p>
-          </div>
-          <div class="hero-visual">
-            <img src="hero-care.png" alt="돌봄과살림 대표 이미지" class="hero-image" />
           </div>
         </div>
 
@@ -548,11 +550,9 @@
             <div class="org-icon">♡</div>
             <div>
               <h3>(사)울산YWCA 돌봄과살림</h3>
-              <p>☎️ 052-944-3523</p>
+              <p>☎ 052-944-3523</p>
               <p>📍 (44636) 울산광역시 남구 삼호로 81</p>
-
-  <p>🕒 상담 가능시간 : 평일 09:00 ~ 17:30</p>
-</div>
+              <p>🕒 상담 가능시간 : 평일 09:00 ~ 17:30</p>
             </div>
           </div>
           <div class="org-right">
@@ -703,7 +703,6 @@
   </main>
 
   <script>
-    // 구글 Apps Script 웹앱 URL
     const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxxhoHFWlOWQDiQ8OIBtvp2Q08oBB6JbUdA6UeysqU22U6N9ssel2xv9xF2ozQ_l08tWg/exec';
 
     const state = {
