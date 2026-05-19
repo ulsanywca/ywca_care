@@ -509,9 +509,19 @@
             <input type="text" id="careHospital" placeholder="예: 울산대학교병원, 동강병원 등" required />
           </div>
 
-          <div class="field">
-            <label for="careDate">서비스 희망일 <span class="required">*</span></label>
-            <input type="date" id="careDate" required />
+          <div class="two-grid">
+            <div class="field">
+              <label for="careStartDate">서비스 희망 시작일 <span class="required">*</span></label>
+              <input type="date" id="careStartDate" required />
+            </div>
+            <div class="field">
+              <label for="careEndDate">서비스 희망 종료일 <span class="required">*</span></label>
+              <input type="date" id="careEndDate" required />
+            </div>
+          </div>
+          <div class="agree-box" style="margin-top:-6px;">
+            하루만 신청하실 경우 시작일과 종료일을 같은 날짜로 선택해주세요.<br>
+            여러 날짜를 희망하실 경우 시작일과 종료일을 각각 선택해주세요.
           </div>
 
           <div class="field">
@@ -603,7 +613,7 @@
 
   <script>
     // 1) 구글 Apps Script 웹앱 URL을 여기에 붙여넣으세요.
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxxhoHFWlOWQDiQ8OIBtvp2Q08oBB6JbUdA6UeysqU22U6N9ssel2xv9xF2ozQ_l08tWg/exec';
+    const GOOGLE_SCRIPT_URL = '여기에_구글_앱스스크립트_웹앱_URL_붙여넣기';
 
     const state = {
       careGender: '',
@@ -697,7 +707,7 @@
         disease: document.getElementById('careDisease').value.trim(),
         status: document.getElementById('careStatus').value.trim(),
         hospital: document.getElementById('careHospital').value.trim(),
-        desiredDate: document.getElementById('careDate').value,
+        desiredDate: document.getElementById('careStartDate').value + ' ~ ' + document.getElementById('careEndDate').value,
         phone: document.getElementById('carePhone').value.trim(),
         submittedAt: new Date().toLocaleString('ko-KR')
       };
